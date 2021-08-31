@@ -1,4 +1,4 @@
-あの『んこダイス』をJavaを使用したCUIベースで一部再現したものです。一回の実行で **Free Roll mode 1Roll分** です。
+あの『んこダイス』をJavaを使用したCUIベースで一部再現したものです。本家の**FREE ROLL**を想定しています。
 NUDGEやSCOREなどは~~メンドクサイので~~再現してません。(そもそもFreeRollなのでSCORE関係)ないです。
 
 ## Credits  
