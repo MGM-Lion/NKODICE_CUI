@@ -19,14 +19,13 @@ public class PlayNkoDice {
         String continueORexit = "";
         continueORexit = typeScan.nextLine();
 		String[] diceResult2 = null;
-        if(!continueORexit.equals("y")) {
-            typeScan.close();
-        } else {
+        if(continueORexit.equals("y")) {
             System.out.println();
             diceResult2 = NkoDice.DiceRoll(5); 
-        }
-		role = NkoDice.GetResultRole(diceResult2);  //成立役の判定
-        System.out.print(Arrays.toString(role));            //成立役の表示
+			role = NkoDice.GetResultRole(diceResult2);  //成立役の判定
+			System.out.print(Arrays.toString(role));    //成立役の表示
+        } 
+		
 		// ---
 		
         System.out.print("\ncontinue? y/other key : ");
