@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class NkoDice {
     private static final String[] DiceList = {"お","ん", "こ", "う", "ま", "ち"};
@@ -33,7 +34,41 @@ public class NkoDice {
         System.out.print("\n");   
         return ret;
     }
+	
+	//--- uechan edit
+	public static String[] ShakeDice(int count,String[] ret) {
+		Random r = new Random();
+		int val = 0;
+        for(int i=0; i<count; i++){
+			int rnd = r.nextInt(1);
+			if (rnd == 0){
+				val = searchDiceList(ret[i]);
+				val = (val + r.nextInt(6)) % 6;
+				ret[i] = DiceList[val];
+			}
+            System.out.print(DiceList[val] + "\t");
+        }
+        System.out.print("\n");   
+        return ret;
+    }
+	
+	
+	public static int searchDiceList(String str){
+		int i = 0;
+		int j = 0;
+		while(j < DiceList.length){
+			if (DiceList[j] == str){
+				i = j;
+				break;
+			}
+			j++;
+		}
+		
+		return i;
+	}
     
+	//---
+	
     public static String[] GetResultRole(String[] diceResult) {
         List<String> result = new ArrayList<String>();
         for(int i=0; i<DiceRoleList.length; i++){
