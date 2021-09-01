@@ -13,8 +13,24 @@ public class PlayNkoDice {
         try {
             Thread.sleep(1000);
         } catch(InterruptedException e) {}
-        System.out.print("\ncontinue? y/other key : ");
+		
+		// --- uechan edit
+		System.out.print("\nShake a Dice? y/other key : ");
         String continueORexit = "";
+        continueORexit = typeScan.nextLine();
+		String[] diceResult2 = null;
+        if(!continueORexit.equals("y")) {
+            typeScan.close();
+        } else {
+            System.out.println();
+            diceResult2 = NkoDice.DiceRoll(5); 
+        }
+		role = NkoDice.GetResultRole(diceResult2);  //成立役の判定
+        System.out.print(Arrays.toString(role));            //成立役の表示
+		// ---
+		
+        System.out.print("\ncontinue? y/other key : ");
+        continueORexit = "";
         continueORexit = typeScan.nextLine();
         if(!continueORexit.equals("y")) {
             typeScan.close();
