@@ -40,7 +40,7 @@ public class NkoDice {
 		Random r = new Random();
 		int val = 0;
         for(int i=0; i<count; i++){
-			int rnd = r.nextInt(1);
+			int rnd = r.nextInt(2);
 			if (rnd == 0){
 				val = searchDiceList(ret[i]);
 				val = (val + r.nextInt(6)) % 6;
